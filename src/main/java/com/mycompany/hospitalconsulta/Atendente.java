@@ -16,16 +16,24 @@ int dia;
 int hora;
 int paciente;
 int x = 10;
-
+int contador = 0; // Adicionando um contador aqui
+    
     boolean perguntarConsulta(){
+
+        if (contador >= 10) { // Verificando se o contador é 10 ou mais
+            System.out.println("Já atendemos 10 pessoas hoje. Volte amanhã!");
+            return false;
+        }
+        
     Scanner teclado = new Scanner (System.in);
         System.out.println("BEM-VINDO AO HOSPITAL-CANETA-AZUL");
         System.out.println("Gostaria de agendar uma consulta? (Sim/Não)");
         String resposta = teclado.nextLine().toLowerCase();
     
-        //for (int i=0 ; x=10; i++){
+       
         switch (resposta) {
         case "sim":
+            contador++; // Incrementando o contador quando uma pessoa é atendida
             return true;
         case "não":
         case "nao":
