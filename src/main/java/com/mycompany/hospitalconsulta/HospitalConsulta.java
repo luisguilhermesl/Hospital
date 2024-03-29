@@ -21,17 +21,17 @@ public class HospitalConsulta {
         boolean respostaConsulta = c1.perguntarConsulta();
         c1.consulta = respostaConsulta;
         
-        
-        System.out.println("Que dia do mês estária disposta? ");
+        if(respostaConsulta == true){
+            System.out.println("Que dia do mês estária disposta? ");
         int diaC1 = teclado1.nextInt();
         System.out.println("Que horas gostaria? ");
         int horaC1 = teclado2.nextInt();
         System.out.println("Quantos pacientes serão? ");
         int pacienteC1 = teclado1.nextInt();
-        
         c1.dia = diaC1;
         c1.hora = horaC1;
         c1.paciente = pacienteC1;
-        c1.estado();                            
+        c1.estado(); 
+        }
     }
 }

@@ -15,7 +15,8 @@ boolean consulta;
 int dia;
 int hora;
 int paciente;
-int x = 10;
+int x = 10; 
+int contador = 1;
 
     boolean perguntarConsulta(){
     Scanner teclado = new Scanner (System.in);
@@ -23,21 +24,29 @@ int x = 10;
         System.out.println("Gostaria de agendar uma consulta? (Sim/Não)");
         String resposta = teclado.nextLine().toLowerCase();
     
-        //for (int i=0 ; x=10; i++){
+        if (contador == 10) { // Verificando se o contador é 10 ou mais
+            System.out.println("Já atendemos 10 pessoas hoje. Volte amanhã!");
+            return false;
+        }
         switch (resposta) {
         case "sim":
             return true;
         case "não":
+            contador++;
         case "nao":
+            contador++;
             System.out.println("Ok tenha um bom dia. Próximo da fila!\n");
-            return perguntarConsulta();
+           
         default:
             System.out.println();
             return perguntarConsulta();
     }
         
     }
+   
+    
     void sim(){
+        perguntarConsulta();
         this.consulta = true;
     }
     void diaC1(){
